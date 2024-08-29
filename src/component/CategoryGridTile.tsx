@@ -1,10 +1,16 @@
 import React from "react";
 import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
 
-function CategoryGridTile({title, color} : any): React.JSX.Element{
+function CategoryGridTile({title, color, onPress} : any): React.JSX.Element{
     return(
         <View style={styles.gridItem}>
-            <Pressable android_ripple={{color: '#ccc'}} style={({pressed}) => [styles.button, pressed ? styles.buttonPressed : null]}>
+            <Pressable
+                onPress={onPress}
+                android_ripple={{color: '#ccc'}}
+                style={({pressed}) => [
+                    styles.button,
+                    pressed ? styles.buttonPressed : null,
+                    ]}>
                 <View style={[styles.InnerContainer, {backgroundColor: color}]}>
                     <Text style={styles.title}>
                         {title}
@@ -45,7 +51,7 @@ const styles = StyleSheet.create({
     title:{
         fontWeight: 'bold',
         fontSize: 16,
-    }
-})
+    },
+});
 
 export default CategoryGridTile;
