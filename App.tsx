@@ -6,29 +6,14 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import CategoriesScreen from './src/screens/CategoriesScreen';
 
 
 
 function App(): React.JSX.Element {
   return (
-    <View style={styles.sectionContainer}>
-      <Text>Hello There</Text>
-    </View>
+    <CategoriesScreen />
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    flex:1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
