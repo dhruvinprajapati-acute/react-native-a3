@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MealsOverviewScreen from './src/screens/MealsOverviewScreen';
 import MealDetailScreen from './src/screens/MealDetailScreen';
+import { Button, Text } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 

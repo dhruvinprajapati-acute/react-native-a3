@@ -1,14 +1,27 @@
-import React from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useLayoutEffect } from "react";
+import { Button, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../component/MealDetails";
 import SubTtile from "../component/MealDetail/SubTitle";
 import List from "../component/MealDetail/List";
+import IconButton from "../component/iconButton";
 
-function MealDetailScreen({route}: any): React.JSX.Element {
+function MealDetailScreen({route, navigation}: any): React.JSX.Element {
     const mealId = route.params.mealId;
 
     const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+    function headerButtonPresshandler(){
+        console.log('press')
+    }
+
+    useLayoutEffect(() =>{
+        navigation.setOptions({
+            headerRight: () => {
+                return <IconButton onPress={headerButtonPresshandler} color="white" icon="house" />
+            }
+        })
+    }, [navigation, headerButtonPresshandler])
 
     return (
         <ScrollView >
